@@ -7,7 +7,7 @@ const AppLayout = () => {
 
   return (
     <>
-      {auth !== "undefined" ? (
+      {auth && auth !== "undefined" ? (
         <div>
           <div className="content-container h-full col-span-5">
             <Navbar />
