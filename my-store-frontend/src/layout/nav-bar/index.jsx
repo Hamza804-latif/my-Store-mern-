@@ -5,7 +5,6 @@ const NavBar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const Logout = () => {
-    console.log("logout");
     localStorage.removeItem("token");
     navigate("/login");
   };

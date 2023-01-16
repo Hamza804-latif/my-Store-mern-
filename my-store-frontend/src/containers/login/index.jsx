@@ -25,12 +25,11 @@ const Index = () => {
       setSpin(true);
       axios
         .post("http://localhost:5000/login", {
-          data: JSON.stringify({ email, password }),
+          data: { email, password },
         })
         .then((res) => {
           setSpin(false);
           if (res) {
-            console.log("inside", res);
             let result = res.data;
             localStorage.setItem("token", JSON.stringify(result.token));
             if (result?.status === 200) {
@@ -99,7 +98,7 @@ const Index = () => {
           </MDBValidation>
         </MDBCardBody>
         <MDBCardFooter>
-          <Link to="/register">
+          <Link to="/signup">
             <p>Don't have an account ? Sign Up</p>
           </Link>
         </MDBCardFooter>
