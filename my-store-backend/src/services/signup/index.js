@@ -5,8 +5,6 @@ module.exports = async (req, resp) => {
   if (username && email && password) {
     try {
       let checkUser = await users.findOne({ email });
-      let check = Boolean(checkUser);
-      console.log("hgj", check);
       if (!checkUser) {
         let createUser = new users({
           _id: mongoose.Types.ObjectId(),
