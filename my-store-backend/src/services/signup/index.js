@@ -13,7 +13,7 @@ module.exports = async (req, resp) => {
       let result = await createUser.save();
       resp.status(201).json(result);
     } catch (err) {
-      resp.status(502).json({ message: `inter server error ${err}` });
+      resp.status(502).json({ message: `internal server error ${err}` });
     }
   } else {
     resp.status(400).json({ message: "bad request please send valid data" });

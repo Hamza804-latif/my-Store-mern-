@@ -9,12 +9,13 @@ module.exports = (req, resp) => {
   if (email == "admin@admin.com" && password == "admin") {
     try {
       let token = jwt.sign({ email, password }, jwtkey);
-      resp.json({ result: "Login Successful", token });
+      resp.status(200).json({ status: 200, result: "Login Successful", token });
     } catch (err) {
-      resp.json({ message: err.message });
+      resp.status(500).json({ status: 400, message: err.message });
     }
   } else {
-    resp.json({
+    resp.status(401).json({
+      status: 401,
       message: "token is not valid or username/password is incorrect",
     });
   }

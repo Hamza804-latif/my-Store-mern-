@@ -12,10 +12,13 @@ import {
 } from "../containers";
 import Login from "../containers/login";
 import Signup from "../containers/signup";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
